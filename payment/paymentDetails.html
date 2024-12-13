@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>거래정보</title>
-    <link rel="stylesheet" href="/css/paymentDetails.css">
+    <link rel="stylesheet" href="/assets/css/paymentDetails.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="title">
@@ -19,13 +21,7 @@
         </div>
 
         <style>
-            .order.wrap{
-                margin: 15px 7px; justify-content: center;
-            }
 
-            .orderNUM{
-                margin-left: auto; color: rgb(102, 102, 102); font-size: 13px;font-weight: 500;
-            }
         </style>
 
         <div class="order wrap">
@@ -33,7 +29,60 @@
             <div class="orderNUM">주문번호 123</div>
         </div>
 
-        <div style="border: 1px solid rgb(229, 229, 229); border-radius: 5px;">test</div>
+
+        <div class="product-status">
+            <div class="pay-status">
+                <strong>결제완료</strong>
+            </div>
+
+
+            <hr>
+            <div class="product wrap">
+                <img src="/assets/img/박보영.jpg" alt="">
+
+                <div class="product-details">
+                    <div class="product-details name">브로마인드</div>
+                    <div class="product-details price">20000원</div>
+                </div>
+            </div>
+
+            <div class="product-pay-guide">
+                <strong>결제하신 카카오페이머니로 입금 되었습니다.</strong>
+            </div>
+        </div>
+
+        <hr class="product-line">
+        <style>
+
+        </style>
+        <div class="product-pay-details">
+            <h2>
+                <Strong>결제정보</Strong>
+            </h2>
+
+            <div class="details-content">
+                <div class="content-status">
+                    <div class="details-content-order wrap">
+                        <div>상품금액</div>
+                        <strong class="money">20000원</strong>
+                    </div>
+                    <div class="details-content-pay wrap">
+                        <strong>결제금액</strong>
+                        <strong class="money">20000원</strong>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <button id="add-review"
+                class="middle none center mr-4 rounded-lg bg-blue-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                data-ripple-light="true">
+                후기 작성하기
+            </button>
+        </div>
+
     </div>
 </body>
+
 </html>
