@@ -22,6 +22,7 @@ body{
 }
 
 .history-title {
+    cursor: pointer;
     width: 50%;
     font-size: 18px;
     display: flex;
@@ -31,7 +32,16 @@ body{
 }
 
 .history-title.on {
-    border-bottom: 3px solid black
+    border-bottom: 3px solid black;
+    cursor: default !important;
+}
+
+.history-title-menu{
+    display: none;
+}
+
+.history-title-menu.on{
+    display: block;
 }
 
 .status.wrap div {
@@ -44,9 +54,14 @@ body{
     font-size: 14px;
 }
 
+.status{
+    cursor: pointer;
+}
+
 .status.on {
     background-color: black;
     color: white !important;
+    cursor: default !important;
 }
 
 #voice-search {

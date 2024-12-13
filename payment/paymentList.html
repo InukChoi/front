@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>거래정보</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/assets/css/paymentList.css">
+    <script src="/assets/js/paymentList.js" defer></script>
 </head>
 
 <body>
@@ -20,19 +22,20 @@
         </div>
 
         <div class="history wrap">
-            <div class="history-title on">
+            <div id="sell" class="history-title on">
                 <strong>판매내역</strong>
             </div>
-            <div class="history-title">
+            <div id="buy" class="history-title">
                 <strong>구매내역</strong>
             </div>
         </div>
 
         <div class="status wrap">
-            <div class="status on"><strong>전체</strong></div>
-            <div class="status"><strong>진행중</strong></div>
-            <div class="status"><strong>판매완료</strong></div>
+            <div id="status-all" class="status on"><strong>전체</strong></div>
+            <div id="status-ing" class="status"><strong>진행중</strong></div>
+            <div id="status-fin" class="status"><strong>판매완료</strong></div>
         </div>
+
 
         <div class="search wrap">
 
@@ -58,9 +61,6 @@
                 </button>
             </div>
         </div>
-
-
-        
 
         <div class="product wrap">
             <div class="product-main">
