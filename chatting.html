@@ -288,10 +288,11 @@
 
       <!-- Main Chat Area -->
       <div
-        class="flex-1 h-full overflow-y-scroll scrollbar scrollbar-thumb-gray-500 scrollbar-track-gray-200"
+        class="flex-1"
       >
-        <!-- Chat Header -->
-        <header class=" flex bg-white p-4 text-gray-700">
+     
+                <!-- Chat Header -->
+        <header class=" flex bg-white p-4 text-gray-700 border-b border-gray-300 shadow-md">
           <h1 class="text-2xl font-semibold">알고리즘 문제 해결 전략</h1>
           <div class="-mt-0.5">
             <button class="group relative ml-4 h-10 w-32 overflow-hidden rounded-2xl bg-indigo-500 text-lg font-bold text-white " id="openModalButton">
@@ -299,11 +300,11 @@
               <div class="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
             </button>
           </div>
+      
           
         </header>
-
         <!-- Chat Messages -->
-        <div class="h-screen overflow-y-auto p-4 pb-36">
+        <div class="h-screen overflow-y-auto p-4 pb-36 overflow-y-scroll scrollbar scrollbar-thumb-gray-500 scrollbar-track-gray-200">
           <!-- Incoming Message -->
           <div class="flex mb-4 cursor-pointer">
             <div
@@ -315,7 +316,7 @@
                 class="w-8 h-8 rounded-full"
               />
             </div>
-            <div class="flex max-w-96 bg-white rounded-lg p-3 gap-3">
+            <div class="flex max-w-96 bg-indigo-200 rounded-lg p-3 gap-3">
               <p class="text-gray-700">안녕하세요! 책 상태가 궁금합니다.</p>
             </div>
           </div>
@@ -342,6 +343,7 @@
               />
             </div>
           </div>
+          
 
           <!-- 모달-->
           <div class="py-12 bg-gray-700 bg-opacity-50 transition duration-150 ease-in-out z-10 absolute top-0 right-0 bottom-0 left-0 hidden" id="paymentModal">
