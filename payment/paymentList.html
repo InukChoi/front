@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>거래정보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/paymentList.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" role="img">
+                <path
+                    d="M14.265 19.537a.9.9 0 1 0 1.27-1.274l-8.362-8.34 8.365-8.387A.9.9 0 0 0 14.263.264l-9 9.024a.902.902 0 0 0 .002 1.273l9 8.976z"
+                    fill="#1e1d29" fill-rule="evenodd"></path>
+            </svg>
+            <h1 class="paymentList"><strong>거래내역</strong></h1>
+        </div>
+
+        <div class="history wrap">
+            <div class="history-title on">
+                <strong>판매내역</strong>
+            </div>
+            <div class="history-title">
+                <strong>구매내역</strong>
+            </div>
+        </div>
+
+        <div class="status wrap">
+            <div class="status on"><strong>전체</strong></div>
+            <div class="status"><strong>진행중</strong></div>
+            <div class="status"><strong>판매완료</strong></div>
+        </div>
+
+        <div class="search wrap">
+
+            <label for="voice-search" class="sr-only">Search</label>
+            <div class="relative w-full wrap">
+                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <input type="text" id="voice-search"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="상품명으로 검색" required="">
+                <button class="search BTN">
+                    <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 18" role="img">
+                        <path
+                            d="M6.6 11.3c1.562 0 2.866 1.063 3.265 2.5H19a.9.9 0 1 1 0 1.8H9.865c-.399 1.436-1.703 2.5-3.265 2.5s-2.866-1.064-3.265-2.5H1a.9.9 0 0 1 0-1.8h2.335c.4-1.437 1.703-2.5 3.265-2.5zm0 1.8c-.882 0-1.6.718-1.6 1.6 0 .882.718 1.6 1.6 1.6.882 0 1.6-.718 1.6-1.6 0-.882-.718-1.6-1.6-1.6zm6.801-11.2c1.562 0 2.866 1.063 3.265 2.5h2.335a.9.9 0 0 1 0 1.8h-2.335c-.399 1.436-1.703 2.5-3.265 2.5s-2.866-1.064-3.265-2.5H1.001a.9.9 0 1 1 0-1.8h9.135c.399-1.437 1.703-2.5 3.265-2.5zm0 1.8c-.882 0-1.6.718-1.6 1.6 0 .882.718 1.6 1.6 1.6.882 0 1.6-.718 1.6-1.6 0-.882-.718-1.6-1.6-1.6z"
+                            fill="#1e1d29" fill-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+
+        
+
+        <div class="product wrap">
+            <div class="product-main">
+                <div class="date wrap">
+                    <strong>21년 11월 17일</strong>
+                    <button style="margin-left: auto;">
+                        <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" role="img">
+                            <path
+                                d="M5.262 19.536a.9.9 0 0 0 1.273 0l9-8.974a.905.905 0 0 0 .265-.636.904.904 0 0 0-.263-.637l-9-9.024a.9.9 0 1 0-1.275 1.27l8.365 8.388-8.363 8.34a.9.9 0 0 0-.002 1.273"
+                                fill="#7f7f7f" fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <hr>
+
+                <div id="paymentStatus">거래완료</div>
+
+                <div class="product-details wrap">
+                    <img src="/img/t1.jpg" alt="">
+                    <div class="product-details-information">
+                        <strong>180,000원</strong>
+                        <div style="font-size: 13px; color: rgb(102, 102, 102);">머큐리얼 베이퍼14 엘리트 ag 사이즈275</div>
+                        <div style="font-size: 13px; color: rgb(140, 140, 140);">구매자</div>
+                    </div>
+                </div>
+
+                <button id="reviewBTN"
+                    class="middle none center w-full rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    data-ripple-light="true">
+                    후기 남기기
+                </button>
+            </div>
+        </div>
+
+        <div class="product wrap">
+            <div class="product-main">
+                <div class="date wrap">
+                    <strong>21년 11월 17일</strong>
+                    <button style="margin-left: auto;">
+                        <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" role="img">
+                            <path
+                                d="M5.262 19.536a.9.9 0 0 0 1.273 0l9-8.974a.905.905 0 0 0 .265-.636.904.904 0 0 0-.263-.637l-9-9.024a.9.9 0 1 0-1.275 1.27l8.365 8.388-8.363 8.34a.9.9 0 0 0-.002 1.273"
+                                fill="#7f7f7f" fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <hr>
+
+                <div id="paymentStatus">거래완료</div>
+
+                <div class="product-details wrap">
+                    <img src="/img/t1.jpg" alt="">
+                    <div class="product-details-information">
+                        <strong>180,000원</strong>
+                        <div style="font-size: 13px; color: rgb(102, 102, 102);">머큐리얼 베이퍼14 엘리트 ag 사이즈275</div>
+                        <div style="font-size: 13px; color: rgb(140, 140, 140);">구매자</div>
+                    </div>
+                </div>
+
+                <button id="reviewBTN"
+                    class="middle none center w-full rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    data-ripple-light="true">
+                    후기 남기기
+                </button>
+            </div>
+        </div>
+
+        <div class="product wrap">
+            <div class="product-main">
+                <div class="date wrap">
+                    <strong>21년 11월 17일</strong>
+                    <button style="margin-left: auto;">
+                        <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" role="img">
+                            <path
+                                d="M5.262 19.536a.9.9 0 0 0 1.273 0l9-8.974a.905.905 0 0 0 .265-.636.904.904 0 0 0-.263-.637l-9-9.024a.9.9 0 1 0-1.275 1.27l8.365 8.388-8.363 8.34a.9.9 0 0 0-.002 1.273"
+                                fill="#7f7f7f" fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <hr>
+
+                <div id="paymentStatus">거래완료</div>
+
+                <div class="product-details wrap">
+                    <img src="/img/t1.jpg" alt="">
+                    <div class="product-details-information">
+                        <strong>180,000원</strong>
+                        <div style="font-size: 13px; color: rgb(102, 102, 102);">머큐리얼 베이퍼14 엘리트 ag 사이즈275</div>
+                        <div style="font-size: 13px; color: rgb(140, 140, 140);">구매자</div>
+                    </div>
+                </div>
+
+                <button id="reviewBTN"
+                    class="middle none center w-full rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    data-ripple-light="true">
+                    후기 남기기
+                </button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
