@@ -31,6 +31,8 @@ body{
     padding: 12px 0px 14px 0px;
 }
 
+
+
 .history-title.on {
     border-bottom: 3px solid black;
     cursor: default !important;
@@ -44,7 +46,14 @@ body{
     display: block;
 }
 
-.status.wrap div {
+.status.wrap.add{
+    display: flex !important;
+}
+.status.wrap{
+    display: none !important;
+}
+
+.status.wrap.add div {
     border: 1px solid rgb(229, 229, 229);
     border-radius: 21px;
     margin-left: 15px;
