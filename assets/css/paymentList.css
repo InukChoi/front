@@ -22,6 +22,7 @@ body{
 }
 
 .history-title {
+    cursor: pointer;
     width: 50%;
     font-size: 18px;
     display: flex;
@@ -30,11 +31,29 @@ body{
     padding: 12px 0px 14px 0px;
 }
 
+
+
 .history-title.on {
-    border-bottom: 3px solid black
+    border-bottom: 3px solid black;
+    cursor: default !important;
 }
 
-.status.wrap div {
+.history-title-menu{
+    display: none;
+}
+
+.history-title-menu.on{
+    display: block;
+}
+
+.status.wrap.add{
+    display: flex !important;
+}
+.status.wrap{
+    display: none !important;
+}
+
+.status.wrap.add div {
     border: 1px solid rgb(229, 229, 229);
     border-radius: 21px;
     margin-left: 15px;
@@ -44,9 +63,14 @@ body{
     font-size: 14px;
 }
 
+.status{
+    cursor: pointer;
+}
+
 .status.on {
     background-color: black;
     color: white !important;
+    cursor: default !important;
 }
 
 #voice-search {

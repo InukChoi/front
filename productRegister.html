@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품 등록 페이지</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white">
+    <main class="container w-[60%] mx-auto p-4">
+      <!-- 상품 정보 섹션 -->
+      <section>
+        <h2 class="text-3xl font-semibold text-gray-800 mb-6">상품정보</h2>
+
+        <!-- 상품 이미지 -->
+        <div class="flex items-start mb-6 border-t border-gray-300 pt-4">
+          <label class="text-2xl font-semibold text-gray-700 w-1/4"
+            >상품 이미지 <small>(0/12)</small></label
+          >
+          <div class="relative w-3/4">
+            <div
+              class="w-64 h-64 border border-gray-300 rounded-md flex items-center justify-center bg-indigo-50 text-gray-700 cursor-pointer"
+            >
+              <label
+                for="file-upload"
+                class="w-full h-full flex flex-col items-center justify-center"
+              >
+                <img
+                  src="./assets/img/upload-minimalistic-svgrepo-com.svg"
+                  alt="업로드 아이콘"
+                  class="w-16 h-16 mb-2"
+                />
+                <span class="text-sm font-medium">이미지 업로드</span>
+                <small class="text-xs text-gray-500">(jpg, jpeg, png)</small>
+                <input
+                  id="file-upload"
+                  type="file"
+                  accept="image/jpg, image/jpeg, image/png"
+                  multiple
+                  class="hidden"
+                />
+              </label>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">
+              상품 이미지는 PC에서는 1:1, 모바일에서는 1:1.23 비율로 보여집니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- 상품명 -->
+        <div class="flex items-start mb-6 border-t border-gray-300 pt-4">
+          <label
+            for="productName"
+            class="text-2xl font-semibold text-gray-700 w-1/4"
+            >상품명</label
+          >
+          <div class="relative w-3/4">
+            <input
+              type="text"
+              id="productName"
+              placeholder="상품명을 입력해 주세요."
+              class="w-full p-2 pr-40 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+            />
+            <a
+              href="https://help.bunjang.co.kr/faq/2/220"
+              target="_blank"
+              class="absolute right-3 top-1/2 transform -translate-y-1/2 text-sm text-red-600 underline"
+            >
+              거래금지 품목 보기
+            </a>
+          </div>
+        </div>
+
+        <!-- 카테고리 -->
+        <div class="flex items-start mb-6 border-t border-gray-300 pt-4">
+          <label class="text-2xl font-semibold text-gray-700 w-1/4"
+            >카테고리</label
+          >
+          <div class="relative w-3/4">
+            <div class="border border-gray-300 rounded-md bg-white shadow-sm">
+              <div class="flex border-t border-gray-300 divide-x">
+                <!-- 첫 번째 카테고리 -->
+                <div class="w-1/3 overflow-y-auto max-h-64 px-4 py-2">
+                  <ul class="space-y-2">
+                    <li>
+                      <button
+                        class="block w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none rounded-md border border-gray-200"
+                      >
+                        여성의류
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="block w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none rounded-md border border-gray-200"
+                      >
+                        남성의류
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="block w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none rounded-md border border-gray-200"
+                      >
+                        신발
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <!-- 두 번째 카테고리 -->
+                <div class="w-1/3 overflow-y-auto max-h-64 px-4 py-2">
+                  <ul class="space-y-2">
+                    <li>
+                      <button
+                        class="block w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none rounded-md border border-gray-200"
+                      >
+                        아우터
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="block w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none rounded-md border border-gray-200"
+                      >
+                        상의
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="block w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none rounded-md border border-gray-200"
+                      >
+                        치마
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <!-- 세 번째 카테고리 -->
+                <div class="w-1/3 overflow-y-auto max-h-64 px-4 py-2">
+                  <ul class="space-y-2">
+                    <li>
+                      <button
+                        class="block w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none rounded-md border border-gray-200"
+                      >
+                        패딩
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="block w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none rounded-md border border-gray-200"
+                      >
+                        코트
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="block w-full px-4 py-3 text-left text-gray-700 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none rounded-md border border-gray-200"
+                      >
+                        자켓
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <p class="mt-2 px-4 py-2 text-gray-700 bg-gray-100 rounded-md">
+              선택한 카테고리:
+              <span id="selectedCategory" class="font-bold text-red-600"
+                >없음</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- 상품 상태 -->
+        <div class="flex items-start mb-6 border-t border-gray-300 pt-4">
+          <label class="text-2xl font-semibold text-gray-700 w-1/4"
+            >상품 상태</label
+          >
+          <div class="w-3/4 space-y-2">
+            <label class="flex items-center">
+              <input type="radio" name="condition" value="new" class="mr-2" />
+              새 상품 (미사용)
+            </label>
+            <label class="flex items-center">
+              <input
+                type="radio"
+                name="condition"
+                value="like-new"
+                class="mr-2"
+              />
+              사용감 없음
+            </label>
+            <label class="flex items-center">
+              <input
+                type="radio"
+                name="condition"
+                value="used-light"
+                class="mr-2"
+              />
+              사용감 적음
+            </label>
+            <label class="flex items-center">
+              <input
+                type="radio"
+                name="condition"
+                value="used-heavy"
+                class="mr-2"
+              />
+              사용감 많음
+            </label>
+          </div>
+        </div>
+
+        <!-- 설명 -->
+        <div class="flex items-start mb-6 border-t border-gray-300 pt-4">
+          <label
+            for="description"
+            class="text-2xl font-semibold text-gray-700 w-1/4"
+            >설명</label
+          >
+          <div class="w-3/4">
+            <textarea
+              id="description"
+              rows="5"
+              placeholder="브랜드, 모델명, 구매 시기 등을 입력해주세요."
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+            ></textarea>
+            <p class="mt-2 text-sm text-gray-500">
+              개인정보 입력은 제한될 수 있습니다.
+            </p>
+            <div class="mt-1 text-sm text-gray-500 text-right">0/2000</div>
+          </div>
+        </div>
+
+        <!-- 가격 -->
+        <div class="flex items-start mb-6 border-t border-gray-300 pt-4">
+          <label class="text-2xl font-semibold text-gray-700 w-1/4">수량</label>
+          <div class="w-3/4">
+            <div class="flex items-center gap-2">
+              <input
+                type="text"
+                placeholder="가격 입력"
+                class="w-40 p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+              />
+              <span class="text-gray-700">원</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 배송비 -->
+        <div class="flex items-start mb-6 border-t border-gray-300 pt-4">
+          <label class="text-2xl font-semibold text-gray-700 w-1/4"
+            >배송비</label
+          >
+          <div class="w-3/4 flex items-center gap-4">
+            <label class="flex items-center">
+              <input
+                type="radio"
+                name="shipping"
+                value="included"
+                class="mr-2"
+              />
+              배송비 포함
+            </label>
+            <label class="flex items-center">
+              <input
+                type="radio"
+                name="shipping"
+                value="excluded"
+                class="mr-2"
+              />
+              배송비 별도
+            </label>
+          </div>
+        </div>
+
+        <!-- 직거래 -->
+        <div class="flex items-start mb-6 border-t border-gray-300 pt-4">
+          <label class="text-2xl font-semibold text-gray-700 w-1/4"
+            >직거래</label
+          >
+          <div class="w-3/4 flex items-center gap-4">
+            <label class="flex items-center">
+              <input
+                type="radio"
+                name="directDeal"
+                value="possible"
+                class="mr-2"
+              />
+              가능
+            </label>
+            <label class="flex items-center">
+              <input
+                type="radio"
+                name="directDeal"
+                value="impossible"
+                class="mr-2"
+              />
+              불가
+            </label>
+          </div>
+        </div>
+
+        <!-- 수량 -->
+        <div class="flex items-start mb-6 border-t border-gray-300 pt-4">
+          <label class="text-2xl font-semibold text-gray-700 w-1/4">수량</label>
+          <div class="w-3/4">
+            <div class="flex items-center gap-2">
+              <input
+                type="text"
+                placeholder="수량 입력"
+                class="w-40 p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+              />
+              <span class="text-gray-700">개</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 등록 버튼 -->
+        <div class="text-right border-t border-gray-300 pt-4">
+          <button
+            class="px-6 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700"
+          >
+            임시저장
+          </button>
+          <button
+            class="px-6 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700"
+          >
+            등록하기
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="min-w-screen min-h-screen bg-gray-200 flex items-center justify-center px-5 py-5">
+        <div class="bg-white text-gray-800 rounded-xl shadow-lg overflow-hidden relative flex"
+            style="width:414px;height:736px">
+            <div class="bg-white h-full w-full px-5 pt-6 pb-20 overflow-y-auto">
+                <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+                    <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start"
+                        aria-label="Global">
+                        <div class="">
+                            <div class="group inline-block">
+                                <button class="outline-none focus:outline-none  px-3 py-1  flex items-center min-w-10">
+                                    <span>
+                                        <svg class="fill-current h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M4 6h16M4 12h16M4 18h16" />
+                                        </svg>
+
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+                            <div class="flex items-center justify-between w-full md:w-auto">
+                                <h3 class="my-4 text-center text-3xl font-semibold text-gray-700">계정 설정 </h3>
+                                <div class="-mr-2 flex items-center md:hidden">
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <br>
+
+                <center>
+                    <button
+                        class="mx-auto mt-5 block rounded-xl border-1 border-transparent bg-orange-400 px-10 py-3 text-center text-base font-medium text-orange-100 outline-8 hover:outline hover:duration-300 "
+                        style="width: 300px;" 
+                        onclick="redirectToPage('social_login_Lim.html');" >
+                        SNS 연동
+                    </button>
+
+                    <button
+                        class="mx-auto mt-5 block rounded-xl border-1 border-transparent bg-orange-400 px-10 py-3 text-center text-base font-medium text-orange-100 outline-8 hover:outline hover:duration-300"
+                        style="width: 300px;">
+                        로그아웃
+                    </button>
+
+                    <button
+                        class="mx-auto mt-5 block rounded-xl border-1 border-transparent bg-orange-400 px-10 py-3 text-center text-base font-medium text-orange-100 outline-8 hover:outline hover:duration-300"
+                        style="width: 300px;">
+                        탈퇴
+                    </button>
+                </center>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function redirectToPage(page) {
+            window.location.href = page;
+        }
+    </script>    
+</body>
+
+</html>
