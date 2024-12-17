@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="css/style.css">
@@ -36,15 +36,17 @@
                 <a href="#" class="flex items-center">
                     <!-- <img src="./assets/img/book-people-logo.svg" alt="book-people-logo"> -->
 
-                    <span class="self-center whitespace-nowrap text-xl font-semibold"
-                        style="margin-left: 1rem;">📚책빵🍞</span>
+                    <span class="self-center whitespace-nowrap text-xl font-semibold" style="margin-left: 1rem;"
+                        onclick="location.href='index.html'">📚책빵🍞</span>
                 </a>
                 <div class="mt-2 sm:mt-0 sm:flex md:order-2">
                     <!-- Login Button -->
                     <button type="button"
-                        class="rounde mr-3 hidden border border-blue-700 py-1.5 px-6 text-center text-sm font-medium text-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 md:inline-block rounded-lg">로그인</button>
+                        class="rounde mr-3 hidden border border-blue-700 py-1.5 px-6 text-center text-sm font-medium text-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 md:inline-block rounded-lg"
+                        onclick="location.href='login.html'">로그인</button>
                     <button type="button"
-                        class="round mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0 md:inline-block rounded-lg">회원가입</button>
+                        class="round mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0 md:inline-block rounded-lg"
+                        onclick="location.href='signup.html'">회원가입</button>
                     <!-- Register Button -->
                     <button data-collapse-toggle="navbar-sticky" type="button"
                         class="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
@@ -62,7 +64,7 @@
                     <ul
                         class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-sm md:font-medium">
                         <li>
-                            <a href="#"
+                            <a href="index.html"
                                 class="block rounded bg-blue-700 py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0 md:text-blue-700"
                                 aria-current="page">홈</a>
                         </li>
@@ -71,11 +73,11 @@
                                 class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700">내상품</a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="productRegister.html"
                                 class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700">판매하기</a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="chatting.html"
                                 class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700">채팅하기</a>
                         </li>
                     </ul>
@@ -135,55 +137,88 @@
         <main class="my-8">
             <div class="container mx-auto px-6">
                 <div class="md:flex md:items-center">
+
+                    <!-- 좌측 프로필 섹션 -->
+
                     <div class="w-full h-64 md:w-1/2 lg:h-96">
-                        <img class="h-full w-full rounded-md object-cover max-w-lg mx-auto"
-                            src="https://images.unsplash.com/photo-1578262825743-a4e402caab76?ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
-                            alt="Nike Air">
-                    </div>
-                    <div class="w-full max-w-lg mx-auto mt-5 md:ml-8 md:mt-0 md:w-1/2">
-                        <h3 class="text-gray-700 uppercase text-lg">Nike Air</h3>
-                        <span class="text-gray-500 mt-3">$125</span>
-                        <hr class="my-3">
-                        <div class="mt-2">
-                            <label class="text-gray-700 text-sm" for="count">Count:</label>
-                            <div class="flex items-center mt-1">
-                                <button class="text-gray-500 focus:outline-none focus:text-gray-600">
-                                    <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                </button>
-                                <span class="text-gray-700 text-lg mx-2">20</span>
-                                <button class="text-gray-500 focus:outline-none focus:text-gray-600">
-                                    <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                </button>
+                        <!-- 프로필 카드 전체를 묶는 부모 컨테이너 -->
+                        <!-- h-full w-full rounded-md object-cover max-w-lg mx-auto -->
+                        <div
+                            class="w-full h-full flex flex-col items-center bg-white rounded-md shadow-md object-cover max-w-lg mx-auto">
+                            <!-- 프로필 이미지 -->
+                            <div class="w-full h-64 lg:h-64">
+                                <img src="#" alt="프로필 이미지" class="h-full w-full rounded-t-md object-cover" />
                             </div>
-                        </div>
-                        <div class="mt-3">
-                            <label class="text-gray-700 text-sm" for="count">Color:</label>
-                            <div class="flex items-center mt-1">
+                            <!-- 상점 정보 컨테이너 -->
+                            <div class="w-full p-4 flex flex-col items-center text-center">
+                                <!-- 상점 이름 -->
+                                <div class="text-lg font-semibold text-gray-800">철수and영희</div>
+                                <!-- 별점 -->
+                                <div class="flex mt-1 space-x-1 text-yellow-400">
+                                    ★ ★ ★ ★ ★
+                                </div>
+                                <!-- 상품 및 팔로워 -->
+                                <div class="text-gray-500 mt-1 text-sm">상품 82 | 팔로워 5</div>
+                                <!-- 팔로우 버튼 -->
                                 <button
-                                    class="h-5 w-5 rounded-full bg-blue-600 border-2 border-blue-200 mr-2 focus:outline-none"></button>
-                                <button class="h-5 w-5 rounded-full bg-teal-600 mr-2 focus:outline-none"></button>
-                                <button class="h-5 w-5 rounded-full bg-pink-600 mr-2 focus:outline-none"></button>
+                                    class="mt-4 flex items-center justify-center w-full py-2 text-gray-800 border rounded-lg hover:bg-gray-100">
+                                    <span class="mr-2">👤</span> 팔로우
+                                </button>
                             </div>
                         </div>
-                        <div class="flex items-center mt-6">
-                            <button
-                                class="px-8 py-2 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500">Order
-                                Now</button>
-                            <button
-                                class="mx-2 text-gray-600 border rounded-md p-2 hover:bg-gray-200 focus:outline-none">
-                                <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path
-                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
-                                    </path>
-                                </svg>
-                            </button>
+                    </div>
+
+
+                    <!-- 우측 상점 정보 섹션 -->
+
+                    <div class="w-full max-w-lg mx-auto mt-5 md:ml-8 md:mt-0 md:w-1/2">
+                        <!-- 상단 헤더 -->
+                        <div class="flex justify-between items-center border-b pb-2">
+                            <div class="text-xl font-bold text-gray-800">철수and영희</div>
+                            <div class="text-sm text-gray-500 flex items-center">
+                                <input type="checkbox" disabled checked id="coding" name="interest" value="coding" />
+                                <label class="text-yellow-400 mr-1">본인인증 완료</label>
+                            </div>
+                        </div>
+                        <!-- 상점 통계 -->
+                        <div class="mt-4 grid grid-cols-3 gap-4 text-sm text-gray-600">
+                            <div class="flex items-center">
+                                <img src="#" alt="아이콘" class="w-4 h-4 mr-2" />
+                                <span>상점오픈일</span>
+                                <span class="ml-auto text-gray-500">100 일 전</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="#" alt="아이콘" class="w-4 h-4 mr-2" />
+                                <span>상점방문수</span>
+                                <span class="ml-auto text-gray-500">471 명</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="#" alt="아이콘" class="w-4 h-4 mr-2" />
+                                <span>상품판매</span>
+                                <span class="ml-auto text-gray-500">56 회</span>
+                            </div>
+                        </div>
+                        <!-- 스크롤 가능한 박스 -->
+                        <div
+                            class="mt-4 text-gray-700 text-sm leading-relaxed border rounded-lg p-3 max-h-32 overflow-y-auto">
+                            <!-- 상점 설명 -->
+                            <div>
+                                상점에 방문해 주셔서 감사합니다^^<br />
+                                보다 편한 거래를 위해 아래 유의사항을 읽어주시면 좋겠습니다~
+                                ※ 거래 방식에 대하여<br />
+                                - 저희 상점은 번개페이 안전결제로만 거래합니다. 다른 거래 방식은 사용하지 않아요.<br />
+                                Zz<br />
+                                Zz<br />
+                                Zz<br /><br />
+                                Zz<br />
+                                Zz<br />
+                                Zz<br />
+                            </div>
+                        </div>
+
+                        <!-- 신고하기 -->
+                        <div class="border-t mt-4 pt-3 text-right">
+                            <a href="#" class="text-sm text-blue-500 hover:underline">신고하기</a>
                         </div>
                     </div>
                 </div>
@@ -200,7 +235,7 @@
                     <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
                         <!--카드드-->
                         <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                            <a href="pdp.html"> <!-- 상세 페이지 링크 추가 -->
+                            <a href="pdp_lim.html"> <!-- 상세 페이지 링크 추가 -->
                                 <button class="w-full h-56 bg-cover rounded-md"
                                     style="background-image: url('https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80')">
                                     <span class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4">View Details</span>
@@ -214,22 +249,7 @@
                         </div>
 
                         <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                            <a href="pdp.html"> <!-- 상세 페이지 링크 추가 -->
-                                <button class="w-full h-56 bg-cover rounded-md"
-                                    style="background-image: url('https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80')">
-                                    <span class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4">View Details</span>
-                                    <!-- 버튼 스타일 및 텍스트 -->
-                                </button>
-                            </a>
-                            <div class="px-5 py-3">
-                                <h3 class="text-gray-700 uppercase">Chanel</h3>
-                                <span class="text-gray-500 mt-2">$12</span>
-                            </div>
-                        </div>
-
-
-                        <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                            <a href="pdp.html"> <!-- 상세 페이지 링크 추가 -->
+                            <a href="pdp_lim.html"> <!-- 상세 페이지 링크 추가 -->
                                 <button class="w-full h-56 bg-cover rounded-md"
                                     style="background-image: url('https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80')">
                                     <span class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4">View Details</span>
@@ -244,7 +264,22 @@
 
 
                         <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                            <a href="pdp.html"> <!-- 상세 페이지 링크 추가 -->
+                            <a href="pdp_lim.html"> <!-- 상세 페이지 링크 추가 -->
+                                <button class="w-full h-56 bg-cover rounded-md"
+                                    style="background-image: url('https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80')">
+                                    <span class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4">View Details</span>
+                                    <!-- 버튼 스타일 및 텍스트 -->
+                                </button>
+                            </a>
+                            <div class="px-5 py-3">
+                                <h3 class="text-gray-700 uppercase">Chanel</h3>
+                                <span class="text-gray-500 mt-2">$12</span>
+                            </div>
+                        </div>
+
+
+                        <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
+                            <a href="pdp_lim.html"> <!-- 상세 페이지 링크 추가 -->
                                 <button class="w-full h-56 bg-cover rounded-md"
                                     style="background-image: url('https://images.unsplash.com/photo-1563170351-be82bc888aa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80')">
                                     <span class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4">View Details</span>
