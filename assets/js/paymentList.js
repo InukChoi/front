@@ -1,67 +1,43 @@
-
-const $sell = document.getElementById('sell');
-const $buy = document.getElementById('buy');
-const $left = document.getElementById('left');
-const $right = document.getElementById('right');
-
-const optionON = (op) => {
-    const $all = op.querySelector('#status-all');
-    const $ing = op.querySelector('#status-ing');
-    const $fin = op.querySelector('#status-fin');
-
-    $all.addEventListener('click', () => {
-        if (!$all.classList.contains('on')) {
-            $all.classList.add('on');
-            $ing.classList.remove('on');
-            $fin.classList.remove('on');
-        }
-    });
-
-    $ing.addEventListener('click', () => {
-        if (!$ing.classList.contains('on')) {
-            $ing.classList.add('on');
-            $all.classList.remove('on');
-            $fin.classList.remove('on');
-        }
-    });
-
-    $fin.addEventListener('click', () => {
-        if (!$fin.classList.contains('on')) {
-            $fin.classList.add('on');
-            $ing.classList.remove('on');
-            $all.classList.remove('on');
-        }
-    });
+const payList =  () => {
+    axios  //프로미스 기반으로 동삭하기 때문에 await을 앞에 붙혀준다.
+       .post('https://d682c2b0-d4d3-442d-a0d1-7d6d298ea66b.mock.pstmn.io/payList')
+       .then((response) => {
+           console.log(response.data); // 응답 데이터
+           return response.data;
+       })
+       .catch((error) => {
+           console.error('Error fetching data:', error);
+       });
 };
 
-const optionOFF = (op) => {
-    const $all = op.querySelector('#status-all');
-    const $ing = op.querySelector('#status-ing');
-    const $fin = op.querySelector('#status-fin');
 
-    $all.classList.add('on');
-    $ing.classList.remove('on');
-    $fin.classList.remove('on');
+const orderList = () => {
+    axios  //프로미스 기반으로 동삭하기 때문에 await을 앞에 붙혀준다.
+       .post('https://d682c2b0-d4d3-442d-a0d1-7d6d298ea66b.mock.pstmn.io/orderList')
+       .then((response) => {
+           console.log(response.data); // 응답 데이터
+           return response.data;
+       })
+       .catch((error) => {
+           console.error('Error fetching data:', error);
+       });
 };
 
-optionON($left);
-
-$sell.addEventListener('click', () => {
-    $sell.classList.add('on');
-    $left.classList.add('add');
-    $buy.classList.remove('on');
-    $right.classList.remove('add');
-    optionON($left);
-    optionOFF($right);
-});
-
-$buy.addEventListener('click', () => {
-    $buy.classList.add('on');
-    $right.classList.add('add');
-    $sell.classList.remove('on');
-    $left.classList.remove('add');
-    optionON($right);
-    optionOFF($left);
-});
 
 
+const paymentList =async () => {
+   await axios  //프로미스 기반으로 동삭하기 때문에 await을 앞에 붙혀준다.
+       Promise.all([
+           payList(),
+           orderList()
+       ])
+       .then((values) => {
+           console.log(values);
+           return values;
+       })
+       .catch((error) => {
+           console.log('Error fetching data:', error);
+       });
+};
+
+const response=paymentList();
