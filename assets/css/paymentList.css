@@ -32,7 +32,13 @@ body {
     padding: 12px 0px 14px 0px;
 }
 
+.menu.on{
+    display: block;
+}
 
+.menu{
+    display: none;
+}
 
 .history-title.on {
     border-bottom: 3px solid black;
