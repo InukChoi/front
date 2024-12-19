@@ -45,6 +45,7 @@ const optionOFF = (op) => {
     $fin.classList.remove('on');
 };
 
+console.log($left);
 optionON($left);
 
 $sell.addEventListener('click', () => {
