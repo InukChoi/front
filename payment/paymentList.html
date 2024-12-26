@@ -7,7 +7,9 @@
     <title>거래정보</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/assets/css/paymentList.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/assets/js/paymentList.js" defer></script>
+    <script src="/assets/js/paymentListAxios.js"></script>
 </head>
 
 <body>
@@ -68,107 +70,219 @@
             </div>
         </div>
 
-        <div class="product wrap">
-            <div class="product-main">
-                <div class="date wrap">
-                    <strong>21년 11월 17일</strong>
-                    <button style="margin-left: auto;">
-                        <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" role="img">
-                            <path
-                                d="M5.262 19.536a.9.9 0 0 0 1.273 0l9-8.974a.905.905 0 0 0 .265-.636.904.904 0 0 0-.263-.637l-9-9.024a.9.9 0 1 0-1.275 1.27l8.365 8.388-8.363 8.34a.9.9 0 0 0-.002 1.273"
-                                fill="#7f7f7f" fill-rule="evenodd"></path>
-                        </svg>
+        <div id="sell-menu" class="menu on">
+            <div class="product wrap">
+                <div class="product-main">
+                    <div class="date wrap">
+                        <strong>21년 11월 17일</strong>
+                        <button style="margin-left: auto;">
+                            <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                role="img">
+                                <path
+                                    d="M5.262 19.536a.9.9 0 0 0 1.273 0l9-8.974a.905.905 0 0 0 .265-.636.904.904 0 0 0-.263-.637l-9-9.024a.9.9 0 1 0-1.275 1.27l8.365 8.388-8.363 8.34a.9.9 0 0 0-.002 1.273"
+                                    fill="#7f7f7f" fill-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <hr>
+
+                    <div id="paymentStatus">거래완료</div>
+
+                    <div class="product-details wrap">
+                        <a href="#">
+                            <img src="/assets/img/교재.jpg" alt="">
+                            <div class="product-details-information">
+                                <strong>23,000원</strong>
+                                <div class="product-details-title">HTML+CSS+자바스크립트</div>
+                                <div class="product-details-user">구매자</div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <button id="reviewBTN"
+                        class="middle none center w-full rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                        data-ripple-light="true">
+                        후기 남기기
                     </button>
                 </div>
+            </div>
 
-                <hr>
-
-                <div id="paymentStatus">거래완료</div>
-
-                <div class="product-details wrap">
-                    <img src="/img/t1.jpg" alt="">
-                    <div class="product-details-information">
-                        <strong>180,000원</strong>
-                        <div style="font-size: 13px; color: rgb(102, 102, 102);">머큐리얼 베이퍼14 엘리트 ag 사이즈275</div>
-                        <div style="font-size: 13px; color: rgb(140, 140, 140);">구매자</div>
+            <div class="product wrap">
+                <div class="product-main">
+                    <div class="date wrap">
+                        <strong>21년 11월 17일</strong>
+                        <button style="margin-left: auto;">
+                            <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                role="img">
+                                <path
+                                    d="M5.262 19.536a.9.9 0 0 0 1.273 0l9-8.974a.905.905 0 0 0 .265-.636.904.904 0 0 0-.263-.637l-9-9.024a.9.9 0 1 0-1.275 1.27l8.365 8.388-8.363 8.34a.9.9 0 0 0-.002 1.273"
+                                    fill="#7f7f7f" fill-rule="evenodd"></path>
+                            </svg>
+                        </button>
                     </div>
-                </div>
 
-                <button id="reviewBTN"
-                    class="middle none center w-full rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    data-ripple-light="true">
-                    후기 남기기
-                </button>
+                    <hr>
+
+                    <div id="paymentStatus">거래완료</div>
+
+                    <div class="product-details wrap">
+                        <a href="#">
+                            <img src="/assets/img/교재.jpg" alt="">
+                            <div class="product-details-information">
+                                <strong>23,000원</strong>
+                                <div class="product-details-title">HTML+CSS+자바스크립트트</div>
+                                <div class="product-details-user">구매자</div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <button id="reviewBTN"
+                        class="middle none center w-full rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                        data-ripple-light="true">
+                        후기 남기기
+                    </button>
+                </div>
+            </div>
+
+            <div class="product wrap">
+                <div class="product-main">
+                    <div class="date wrap">
+                        <strong>21년 11월 17일</strong>
+                        <button style="margin-left: auto;">
+                            <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                role="img">
+                                <path
+                                    d="M5.262 19.536a.9.9 0 0 0 1.273 0l9-8.974a.905.905 0 0 0 .265-.636.904.904 0 0 0-.263-.637l-9-9.024a.9.9 0 1 0-1.275 1.27l8.365 8.388-8.363 8.34a.9.9 0 0 0-.002 1.273"
+                                    fill="#7f7f7f" fill-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <hr>
+
+                    <div id="paymentStatus">거래완료</div>
+
+                    <div class="product-details wrap">
+                        <a href="#">
+                            <img src="/assets/img/교재.jpg" alt="">
+                            <div class="product-details-information">
+                                <strong>23,000원</strong>
+                                <div class="product-details-title">HTML+CSS+자바스크립트트</div>
+                                <div class="product-details-user">구매자</div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <button id="reviewBTN"
+                        class="middle none center w-full rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                        data-ripple-light="true">
+                        후기 남기기
+                    </button>
+                </div>
             </div>
         </div>
 
-        <div class="product wrap">
-            <div class="product-main">
-                <div class="date wrap">
-                    <strong>21년 11월 17일</strong>
-                    <button style="margin-left: auto;">
-                        <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" role="img">
-                            <path
-                                d="M5.262 19.536a.9.9 0 0 0 1.273 0l9-8.974a.905.905 0 0 0 .265-.636.904.904 0 0 0-.263-.637l-9-9.024a.9.9 0 1 0-1.275 1.27l8.365 8.388-8.363 8.34a.9.9 0 0 0-.002 1.273"
-                                fill="#7f7f7f" fill-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </div>
 
-                <hr>
+        <div id="buy-menu" class="menu">
+            <div class="product wrap">
+                <div class="product-main">
+                    <div class="date wrap">
+                        <strong>21년 11월 17일</strong>
+                        <button style="margin-left: auto;">
+                            <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                role="img">
+                                <path
+                                    d="M5.262 19.536a.9.9 0 0 0 1.273 0l9-8.974a.905.905 0 0 0 .265-.636.904.904 0 0 0-.263-.637l-9-9.024a.9.9 0 1 0-1.275 1.27l8.365 8.388-8.363 8.34a.9.9 0 0 0-.002 1.273"
+                                    fill="#7f7f7f" fill-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
 
-                <div id="paymentStatus">거래완료</div>
+                    <hr>
 
-                <div class="product-details wrap">
-                    <img src="/img/t1.jpg" alt="">
-                    <div class="product-details-information">
-                        <strong>180,000원</strong>
-                        <div style="font-size: 13px; color: rgb(102, 102, 102);">머큐리얼 베이퍼14 엘리트 ag 사이즈275</div>
-                        <div style="font-size: 13px; color: rgb(140, 140, 140);">구매자</div>
+                    <div id="paymentStatus">판매완료</div>
+
+                    <div class="product-details wrap">
+                        <a href="#">
+                            <img src="/assets/img/교재.jpg" alt="">
+                            <div class="product-details-information">
+                                <strong>180,000원</strong>
+                                <div class="product-details-title">HTML+CSS+자바스크립트</div>
+                                <div class="product-details-user">구매자</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <button id="reviewBTN"
-                    class="middle none center w-full rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    data-ripple-light="true">
-                    후기 남기기
-                </button>
+            <div class="product wrap">
+                <div class="product-main">
+                    <div class="date wrap">
+                        <strong>21년 11월 17일</strong>
+                        <button style="margin-left: auto;">
+                            <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                role="img">
+                                <path
+                                    d="M5.262 19.536a.9.9 0 0 0 1.273 0l9-8.974a.905.905 0 0 0 .265-.636.904.904 0 0 0-.263-.637l-9-9.024a.9.9 0 1 0-1.275 1.27l8.365 8.388-8.363 8.34a.9.9 0 0 0-.002 1.273"
+                                    fill="#7f7f7f" fill-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <hr>
+
+                    <div id="paymentStatus">판매완료</div>
+
+                    <div class="product-details wrap">
+                        <a href="#">
+                            <img src="/assets/img/교재.jpg" alt="">
+                            <div class="product-details-information">
+                                <strong>180,000원</strong>
+                                <div class="product-details-title">HTML+CSS+자바스크립트</div>
+                                <div class="product-details-user">구매자</div>
+                            </div>
+                        </a>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <div class="product wrap">
+                <div class="product-main">
+                    <div class="date wrap">
+                        <strong>21년 11월 17일</strong>
+                        <button style="margin-left: auto;">
+                            <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                role="img">
+                                <path
+                                    d="M5.262 19.536a.9.9 0 0 0 1.273 0l9-8.974a.905.905 0 0 0 .265-.636.904.904 0 0 0-.263-.637l-9-9.024a.9.9 0 1 0-1.275 1.27l8.365 8.388-8.363 8.34a.9.9 0 0 0-.002 1.273"
+                                    fill="#7f7f7f" fill-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <hr>
+
+                    <div id="paymentStatus">판매완료</div>
+
+                    <div class="product-details wrap">
+                        <a href="#">
+                            <img src="/assets/img/교재.jpg" alt="">
+                            <div class="product-details-information">
+                                <strong>180,000원</strong>
+                                <div class="product-details-title">HTML+CSS+자바스크립트</div>
+                                <div class="product-details-user">구매자</div>
+                            </div>
+                        </a>
+                    </div>
+
+                    
+                </div>
             </div>
         </div>
 
-        <div class="product wrap">
-            <div class="product-main">
-                <div class="date wrap">
-                    <strong>21년 11월 17일</strong>
-                    <button style="margin-left: auto;">
-                        <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" role="img">
-                            <path
-                                d="M5.262 19.536a.9.9 0 0 0 1.273 0l9-8.974a.905.905 0 0 0 .265-.636.904.904 0 0 0-.263-.637l-9-9.024a.9.9 0 1 0-1.275 1.27l8.365 8.388-8.363 8.34a.9.9 0 0 0-.002 1.273"
-                                fill="#7f7f7f" fill-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </div>
-
-                <hr>
-
-                <div id="paymentStatus">거래완료</div>
-
-                <div class="product-details wrap">
-                    <img src="/img/t1.jpg" alt="">
-                    <div class="product-details-information">
-                        <strong>180,000원</strong>
-                        <div style="font-size: 13px; color: rgb(102, 102, 102);">머큐리얼 베이퍼14 엘리트 ag 사이즈275</div>
-                        <div style="font-size: 13px; color: rgb(140, 140, 140);">구매자</div>
-                    </div>
-                </div>
-
-                <button id="reviewBTN"
-                    class="middle none center w-full rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                    data-ripple-light="true">
-                    후기 남기기
-                </button>
-            </div>
-        </div>
 
     </div>
 </body>

@@ -1,8 +1,9 @@
-
 const $sell = document.getElementById('sell');
 const $buy = document.getElementById('buy');
 const $left = document.getElementById('left');
 const $right = document.getElementById('right');
+const $sellMenu = document.getElementById('sell-menu');
+const $buyMenu = document.getElementById('buy-menu');
 
 const optionON = (op) => {
     const $all = op.querySelector('#status-all');
@@ -44,6 +45,7 @@ const optionOFF = (op) => {
     $fin.classList.remove('on');
 };
 
+console.log($left);
 optionON($left);
 
 $sell.addEventListener('click', () => {
@@ -51,6 +53,10 @@ $sell.addEventListener('click', () => {
     $left.classList.add('add');
     $buy.classList.remove('on');
     $right.classList.remove('add');
+
+    $sellMenu.classList.add('on');
+    $buyMenu.classList.remove('on');
+
     optionON($left);
     optionOFF($right);
 });
@@ -60,8 +66,10 @@ $buy.addEventListener('click', () => {
     $right.classList.add('add');
     $sell.classList.remove('on');
     $left.classList.remove('add');
+
+    $sellMenu.classList.remove('on');
+    $buyMenu.classList.add('on');
+
     optionON($right);
     optionOFF($left);
 });
-
-
